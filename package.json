@@ -1,0 +1,38 @@
+{
+  "name": "library",
+  "version": "0.0.1",
+  "description": "GBH Library REST API. Allow clients to consume the list of books available and it's pages in differents formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r test/",
+    "dev": "NODE_ENV=development nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/gbh-candidates/erick-jimenez-rodriguez-2019-7-10.git"
+  },
+  "keywords": [
+    "api",
+    "library",
+    "books",
+    "pages"
+  ],
+  "author": "Erick Jiménez <erick.jimenezr04@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/gbh-candidates/erick-jimenez-rodriguez-2019-7-10/issues"
+  },
+  "homepage": "https://gitlab.com/gbh-candidates/erick-jimenez-rodriguez-2019-7-10#readme",
+  "devDependencies": {
+    "documentation": "^12.0.1",
+    "mocha": "^6.1.4",
+    "nodemon": "^1.19.1",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "error": "^7.0.2",
+    "express": "^4.17.1",
+    "knex": "^0.18.4"
+  }
+}
