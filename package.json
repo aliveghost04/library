@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha -r test/",
     "database": "NODE_ENV=development knex",
+    "release": "standard-version",
     "dev": "NODE_ENV=development nodemon index.js"
   },
   "repository": {
@@ -28,7 +29,8 @@
     "documentation": "^12.0.1",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "standard-version": "^6.0.1"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
