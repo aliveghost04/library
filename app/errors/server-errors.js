@@ -1,16 +1,15 @@
 'use strict';
 
 const TypedError = require('error/typed');
-const type = 'ServerError';
 
 const ERROR = TypedError({
-  type,
+  type: 'Server',
   message: 'Something unexpected just happened. Please try again later.',
   statusCode: 500,
 });
 
 const NOT_FOUND = TypedError({
-  type: 'NotFoundError',
+  type: 'NotFound',
   message: 'The resource requested cannot be found',
   statusCode: 404,
 });
