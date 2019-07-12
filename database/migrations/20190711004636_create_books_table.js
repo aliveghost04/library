@@ -5,7 +5,7 @@ exports.up = function(knex) {
       table.bigIncrements('id');
       table.string('name', 150).notNullable();
       table.string('isbn', 50).unique().notNullable();
-      table.date('publish_date').notNullable();
+      table.string('publish_date', 4).notNullable();
       table.string('publish_place', 100).notNullable();
       table.integer('classification_id').unsigned().notNullable();
       table.integer('page_quantity').notNullable();

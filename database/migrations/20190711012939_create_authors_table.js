@@ -4,8 +4,8 @@ exports.up = function(knex) {
     .createTable('authors', (table) => {
       table.increments('id');
       table.string('name', 100).notNullable();
-      table.date('birhdate').notNullable();
-      table.string('birh_place').nullable();
+      table.date('birthdate').notNullable();
+      table.string('birth_place').nullable();
       table.timestamps(true, true);
     });
 };
