@@ -4,7 +4,7 @@
   "description": "GBH Library REST API. Allow clients to consume the list of books available and it's pages in differents formats",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r test/",
+    "test": "NODE_ENV=test mocha --recursive tests/",
     "database": "NODE_ENV=development knex",
     "release": "standard-version",
     "dev": "NODE_ENV=development nodemon index.js"
