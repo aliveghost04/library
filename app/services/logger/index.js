@@ -1,16 +1,18 @@
 'use strict';
 
 const winston = require('winston');
+require('winston-daily-rotate-file');
 const path = require('path');
-
-const currentDate = new Date();
-const filename = `${currentDate.toISOString()}.log`;
-
-const logPath = path.resolve('logs', filename);
 
 const logger = winston.createLogger({
   transports: [
-    new winston.transports.File({ filename: logPath }),
+    new winston.transports.DailyRotateFile({
+      filename: '%DATE%.log',
+      dirname: path.resolve('logs'),
+      datePattern: 'YYYY-MM-DD',
+      maxFiles: '120d',
+      maxSize: '20m',
+    }),
   ],
   format: winston.format.combine(
     winston.format.errors({ stack: true }),

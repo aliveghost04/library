@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 120
+    },
+    "auditLog": "/Users/erick/projects/library/logs/.2f9b4bccd9ea079ed16d27cba77a0e6e4e934ff6-audit.json",
+    "files": [
+        {
+            "date": 1563227529886,
+            "name": "/Users/erick/projects/library/logs/2019-07-15.log",
+            "hash": "16aebac6167769baf2ed3d7648582584"
+        }
+    ]
+}
