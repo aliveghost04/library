@@ -1,6 +1,6 @@
 {
   "name": "library",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "GBH Library REST API. Allow clients to consume the list of books available and it's pages in differents formats",
   "main": "index.js",
   "scripts": {
