@@ -10,8 +10,17 @@ const logPath = path.resolve('logs', filename);
 
 const logger = winston.createLogger({
   transports: [
-    new winston.transports.File({ filename: logPath })
+    new winston.transports.File({ filename: logPath }),
   ],
+  format: winston.format.combine(
+    winston.format.errors({ stack: true }),
+    winston.format.timestamp(),
+    winston.format.json(),
+  ),
 });
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console());
+}
 
 module.exports = logger;

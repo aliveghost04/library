@@ -1,6 +1,6 @@
 'use strict';
 
-const ServerError = require('../errors/server-errors');
+const ServerError = require('../errors/server');
 const Logger = require('../services/logger');
 
 module.exports = (error, req, res, next) => {
@@ -12,7 +12,7 @@ module.exports = (error, req, res, next) => {
   if (error.type) {
     err = error;
   } else {
-    err = ServerError.ERROR;
+    err = new ServerError.Error();
   }
 
   res.status(err.statusCode || 500);

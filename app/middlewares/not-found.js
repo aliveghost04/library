@@ -1,7 +1,7 @@
 'use strict';
 
-const ServerError = require('../errors/server-errors');
+const ServerError = require('../errors/server');
 
 module.exports = (req, res, next) => {
-    next(ServerError.NOT_FOUND);
+    next(new ServerError.NotFound());
 };
