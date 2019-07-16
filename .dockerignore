@@ -1,0 +1,9 @@
+.git
+node_modules
+test
+.env.*
+!.env.example
+.editorconfig
+CHANGELOG.md
+logs/*
+!logs/.2f9b4bccd9ea079ed16d27cba77a0e6e4e934ff6-audit.json

@@ -1,0 +1,41 @@
+version: '3'
+services:
+  backend:
+    build: .
+    hostname: library
+    networks:
+      - network
+    ports:
+      - "3000:3000"
+    environment:
+      - DB_HOST=mysql
+      - DB_USERNAME=root
+      - DB_PASSWORD=mysql_root
+      - DB_NAME=library
+      - DB_MAX_POOL_CONNECTION=10
+      - APP_NAME=Library API
+      - APP_PORT=3000
+      - APP_HOST=0.0.0.0
+      - APP_TRUST_PROXY=true
+      - APP_DEFAULT_MOUNTPOINT=/api
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_HOSTS_TIMEOUT=60
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+  mysql:
+    image: "mysql:5.7.26"
+    hostname: mysql
+    networks:
+      - network
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql_root
+      - MYSQL_DATABASE=library
+    volumes:
+      - ~/docker-volumes/mysql-library:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+networks:
+  network:

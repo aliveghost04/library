@@ -2,8 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const NotFoundMiddleware = require('./app/middlewares/not-found');
-const ErrorHandlerMiddleware = require('./app/middlewares/error-handler');
 const PaginateMiddleware = require('./app/middlewares/paginate');
 
 // Controllers
@@ -26,9 +24,5 @@ router.get('/book/:id', BookController.get);
 router.get('/book/:bookId/page/:pageNumber/:format?', BookController.getPage);
 
 // End all app routes
-
-// Not found and error handler middlewares
-router.use(NotFoundMiddleware);
-router.use(ErrorHandlerMiddleware);
 
 module.exports = router;
